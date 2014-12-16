@@ -25,6 +25,7 @@ From project root directory:
 Test service:
 
 - wl invoke
+- 
 Type "Wen%20Li" when prompted.  Address results should appear.
 
 In Xamarin iOS project...edit worklight.plist and replace IP address with your server's IP address (most likely your local machine).  Build and run on simulator.  Running on device may require additional network setup in order for you device to access your development machine's worklight server.
