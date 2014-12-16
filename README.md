@@ -14,7 +14,7 @@ From the command line:
 - wl add api EmployeeDirectoryiOS -e ios
 - wl add adapter EmployeeAdapter --type http
 
-Now replace both the EmployeeAdapter-impl.js and the EmployeeAdapter.xml files with the same two files in this repository.
+Now replace both the EmployeeAdapter-impl.js and the EmployeeAdapter.xml files with the same two files in MobileFirstFiles directory inside this repository.
 
 From project root directory:
 
