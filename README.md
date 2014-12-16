@@ -30,4 +30,4 @@ Type "Wen%20Li" when prompted.  Address results should appear.
 
 In Xamarin iOS project...edit worklight.plist and replace IP address with your server's IP address (most likely your local machine).  Build and run on simulator.  Running on device may require additional network setup in order for you device to access your development machine's worklight server.
 
-
+Note: In order to keep this sample as bare-bones as possible, a lot of "nice to haves" are not in this demo.  For example, the search expects exact matching and is case sensitive.
