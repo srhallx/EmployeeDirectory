@@ -9,7 +9,7 @@ namespace EmployeeDirectory
 	public class EmployeeDirectoryClient 
 	{
 
-		//Our IBM MobileFirst Client instance
+		//Our MFP Client instance
 		public IWorklightClient WorklightClientInstance { get; private set; }
 		private bool Connected { get; set; }
 
@@ -30,7 +30,9 @@ namespace EmployeeDirectory
 
 			try
 			{
-
+				//
+				// Connect to MFP
+				//
 				if (!Connected) {
 					WorklightResponse response = await WorklightClientInstance.Connect();
 
@@ -40,6 +42,9 @@ namespace EmployeeDirectory
 						throw new Exception("Cannot connect to server.");
 				}
 
+				//
+				// Invoke MFP Procedure findEmployee
+				//
 				WorklightProcedureInvocationData invocationData = new WorklightProcedureInvocationData("EmployeeAdapter", "findEmployee", new object[] {empName});
 				WorklightResponse task = await WorklightClientInstance.InvokeProcedure(invocationData);
 
@@ -47,8 +52,11 @@ namespace EmployeeDirectory
 				{
 					JsonObject obj = (JsonObject)task.ResponseJSON;
 
-					//parse JSON object
+					//
+					//parse JSON object returned from MFP
+					//
 					emp = new Employee(obj["fullname"], obj["email"], obj["phone"]);
+
 				}
 				else {
 					throw new Exception("Invocation of adapter procedure failed.");

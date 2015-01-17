@@ -5,6 +5,8 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "EmployeeDirectory", "Employ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeDirectoryiOS", "EmployeeDirectoryiOS\EmployeeDirectoryiOS.csproj", "{1ADCD274-E06F-49CD-A072-AB92BDCF3889}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeDirectoryAndroid", "EmployeeDirectoryAndroid\EmployeeDirectoryAndroid.csproj", "{FB8BA43A-4E9F-4668-9046-DF906E6AFC80}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
@@ -27,8 +29,17 @@ Global
 		{1ADCD274-E06F-49CD-A072-AB92BDCF3889}.Release|iPhone.Build.0 = Release|iPhone
 		{1ADCD274-E06F-49CD-A072-AB92BDCF3889}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{1ADCD274-E06F-49CD-A072-AB92BDCF3889}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = EmployeeDirectoryiOS\EmployeeDirectoryiOS.csproj
+		{FB8BA43A-4E9F-4668-9046-DF906E6AFC80}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU
+		{FB8BA43A-4E9F-4668-9046-DF906E6AFC80}.Ad-Hoc|iPhone.Build.0 = Release|Any CPU
+		{FB8BA43A-4E9F-4668-9046-DF906E6AFC80}.AppStore|iPhone.ActiveCfg = Release|Any CPU
+		{FB8BA43A-4E9F-4668-9046-DF906E6AFC80}.AppStore|iPhone.Build.0 = Release|Any CPU
+		{FB8BA43A-4E9F-4668-9046-DF906E6AFC80}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{FB8BA43A-4E9F-4668-9046-DF906E6AFC80}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{FB8BA43A-4E9F-4668-9046-DF906E6AFC80}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{FB8BA43A-4E9F-4668-9046-DF906E6AFC80}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{FB8BA43A-4E9F-4668-9046-DF906E6AFC80}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{FB8BA43A-4E9F-4668-9046-DF906E6AFC80}.Release|iPhone.Build.0 = Release|Any CPU
+		{FB8BA43A-4E9F-4668-9046-DF906E6AFC80}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{FB8BA43A-4E9F-4668-9046-DF906E6AFC80}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

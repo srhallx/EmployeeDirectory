@@ -31,6 +31,10 @@ namespace EmployeeDirectoryiOS
 			base.ViewDidLoad ();
 			
 			// Perform any additional setup after loading the view, typically from a nib.
+
+			//
+			// Create instance of MFP client
+			//
 			employeeDirectory = new EmployeeDirectoryClient (WorklightClient.CreateInstance ());
 
 			tbxSearch.ShouldReturn += (textField) => {
