@@ -31,6 +31,10 @@ namespace EmployeeDirectoryiOS
 			base.ViewDidLoad ();
 			
 			// Perform any additional setup after loading the view, typically from a nib.
+			lblName.Text = "";
+			lblEmail.Text = "";
+			lblPhone.Text = "";
+
 
 			//
 			// Create instance of MFP client
