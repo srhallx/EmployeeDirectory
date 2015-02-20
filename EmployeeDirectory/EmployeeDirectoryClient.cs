@@ -2,15 +2,17 @@
 using Worklight;
 using System.Text;
 using System.Json;
+using Newtonsoft.Json;
 using System.Threading.Tasks;
 
 namespace EmployeeDirectory
 {
-	public class EmployeeDirectoryClient 
+	public class EmployeeDirectoryClient
 	{
 
 		//Our MFP Client instance
 		public IWorklightClient WorklightClientInstance { get; private set; }
+
 		private bool Connected { get; set; }
 
 		public EmployeeDirectoryClient (IWorklightClient wlc)
@@ -24,51 +26,88 @@ namespace EmployeeDirectory
 		/// </summary>
 		/// <returns>The employee record.</returns>
 		/// <param name="empName">employee name</param>
-		public async Task<Employee> FindEmployee(string empName)
+		public async Task<Employee[]> FindEmployee (string empName)
 		{
-			Employee emp = null;
+			Employee[] emp;
 
-			try
-			{
+			try {
 				//
 				// Connect to MFP
 				//
 				if (!Connected) {
-					WorklightResponse response = await WorklightClientInstance.Connect();
+					WorklightResponse response = await WorklightClientInstance.Connect ();
 
 					if (response.Success)
 						Connected = true;
 					else
-						throw new Exception("Cannot connect to server.");
+						throw new Exception ("Cannot connect to server.");
 				}
 
 				//
 				// Invoke MFP Procedure findEmployee
 				//
-				WorklightProcedureInvocationData invocationData = new WorklightProcedureInvocationData("EmployeeAdapter", "findEmployee", new object[] {empName});
-				WorklightResponse task = await WorklightClientInstance.InvokeProcedure(invocationData);
+				WorklightProcedureInvocationData invocationData = new WorklightProcedureInvocationData ("mysqladapter", "findEmployee", new object[] { empName });
+				WorklightResponse task = await WorklightClientInstance.InvokeProcedure (invocationData);
 
-				if (task.Success)
-				{
+				if (task.Success) {
 					JsonObject obj = (JsonObject)task.ResponseJSON;
 
-					//
-					//parse JSON object returned from MFP
-					//
-					emp = new Employee(obj["fullname"], obj["email"], obj["phone"]);
+					emp = new Employee[obj["resultSet"].Count];
 
+					emp = JsonConvert.DeserializeObject<Employee[]> (obj ["resultSet"].ToString ());
+					return emp;
+
+				} else {
+					throw new Exception ("Invocation of adapter procedure failed.");
 				}
-				else {
-					throw new Exception("Invocation of adapter procedure failed.");
-				}
-			}
-			catch (Exception ex)
-			{
+			} catch (Exception ex) {
 				Console.WriteLine (ex.Message);
 			}
 				
-			return emp;
+			return null;
+		}
+
+		public async Task<Employee[]> AllEmployees ()
+		{
+			Employee[] emp;
+
+			try {
+				//
+				// Connect to MFP
+				//
+				if (!Connected) {
+					WorklightResponse response = await WorklightClientInstance.Connect ();
+
+					if (response.Success)
+						Connected = true;
+					else
+						throw new Exception ("Cannot connect to server.");
+				}
+
+				//
+				// Invoke MFP Procedure findEmployee
+				//
+				WorklightProcedureInvocationData invocationData = new WorklightProcedureInvocationData ("mysqladapter", "allEmployees", new object[] {});
+				WorklightResponse task = await WorklightClientInstance.InvokeProcedure (invocationData);
+
+				if (task.Success) {
+					JsonObject obj = (JsonObject)task.ResponseJSON;
+
+					emp = new Employee[obj["resultSet"].Count];
+
+					emp = JsonConvert.DeserializeObject<Employee[]> (obj ["resultSet"].ToString ());
+					return emp;
+
+				} else {
+					throw new Exception ("Invocation of adapter procedure failed.");
+				}
+			} catch (Exception ex) {
+				Console.WriteLine (ex.Message);
+			}
+
+			return null;
 		}
 	}
+
 }
 

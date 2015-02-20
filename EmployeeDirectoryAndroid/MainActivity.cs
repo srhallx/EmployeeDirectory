@@ -32,12 +32,12 @@ namespace EmployeeDirectoryAndroid
 
 			search.QueryTextSubmit += async (object sender, SearchView.QueryTextSubmitEventArgs e) => {
 
-				Employee employeeRecord = await employeeDirectory.FindEmployee (search.Query);
+				Employee[] employeeRecord = await employeeDirectory.FindEmployee (search.Query);
 
 				if (employeeRecord != null) {
-					lblName.Text = employeeRecord.Name;
-					lblEmail.Text = employeeRecord.Email;
-					lblPhone.Text = employeeRecord.Phone;
+					lblName.Text = employeeRecord[0].FullName;
+					lblEmail.Text = employeeRecord[0].Email;
+					lblPhone.Text = employeeRecord[0].Phone;
 				} else {
 					lblName.Text = "No Record Found";
 					lblEmail.Text = "";

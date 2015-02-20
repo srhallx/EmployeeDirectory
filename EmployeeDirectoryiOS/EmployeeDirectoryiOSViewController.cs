@@ -10,7 +10,7 @@ namespace EmployeeDirectoryiOS
 	public partial class EmployeeDirectoryiOSViewController : UIViewController
 	{
 
-		private EmployeeDirectoryClient employeeDirectory;
+
 
 		public EmployeeDirectoryiOSViewController (IntPtr handle) : base (handle)
 		{
@@ -22,6 +22,8 @@ namespace EmployeeDirectoryiOS
 			base.DidReceiveMemoryWarning ();
 			
 			// Release any cached data, images, etc that aren't in use.
+
+		
 		}
 
 		#region View lifecycle
@@ -31,34 +33,17 @@ namespace EmployeeDirectoryiOS
 			base.ViewDidLoad ();
 			
 			// Perform any additional setup after loading the view, typically from a nib.
-			lblName.Text = "";
-			lblEmail.Text = "";
-			lblPhone.Text = "";
+			tbxName.Text = "";
+			tbxEmail.Text = "";
+			tbxPhone.Text = "";
 
 
 			//
 			// Create instance of MFP client
 			//
-			employeeDirectory = new EmployeeDirectoryClient (WorklightClient.CreateInstance ());
 
-			tbxSearch.ShouldReturn += (textField) => {
-				tbxSearch.ResignFirstResponder ();
-				return true;
-			};
 
-			tbxSearch.Ended += async delegate(object sender, EventArgs e) {
-				Employee employeeRecord = await employeeDirectory.FindEmployee (tbxSearch.Text);
 
-				if (employeeRecord != null) {
-					lblName.Text = employeeRecord.Name;
-					lblEmail.Text = employeeRecord.Email;
-					lblPhone.Text = employeeRecord.Phone;
-				} else {
-					lblName.Text = "No record found";
-					lblEmail.Text = "";
-					lblPhone.Text = "";
-				}
-			};
 		}
 
 		public override void ViewWillAppear (bool animated)

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4451" systemVersion="13A461" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4451" systemVersion="13A461" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="184">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733.0"/>
+        <deployment version="1792" identifier="iOS"/>
     </dependencies>
     <scenes>
         <!--class Prefix:identifier View Controller-->
@@ -15,51 +16,122 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" customColorSpace="calibratedWhite" colorSpace="calibratedRGB" red="0.12156862745098039" green="0.403921568627451" blue="0.65490196078431373" alpha="1"/>
+                        <color key="backgroundColor" customColorSpace="calibratedWhite" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="" borderStyle="roundedRect" minimumFontSize="17" id="5" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Search Here" clearButtonMode="whileEditing">
-                                <rect key="frame" x="10" y="40" width="290" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
-                            </textField>
-                            <view contentMode="scaleToFill" id="12" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" alpha="0.4">
-                                <rect key="frame" x="0.0" y="96" width="320" height="472"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name" lineBreakMode="tailTruncation" minimumFontSize="10" id="19" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" highlighted="NO">
-                                        <rect key="frame" x="20" y="17" width="280" height="40"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="30"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="email" lineBreakMode="tailTruncation" minimumFontSize="10" id="20" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
-                                        <rect key="frame" x="20" y="65" width="280" height="40"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="24"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="phone" lineBreakMode="tailTruncation" minimumFontSize="10" id="21" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
-                                        <rect key="frame" x="20" y="113" width="280" height="40"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="24"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="phone" lineBreakMode="tailTruncation" minimumFontSize="10" id="21" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="52" y="193" width="259" height="33"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="email" lineBreakMode="tailTruncation" minimumFontSize="10" id="20" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="52" y="154" width="259" height="31"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name" lineBreakMode="tailTruncation" minimumFontSize="10" id="19" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" highlighted="NO">
+                                <rect key="frame" x="20" y="68" width="280" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="30"/>
+                                <color key="textColor" colorSpace="calibratedRGB" red="0.12156862745098039" green="0.403921568627451" blue="0.65490196078431373" alpha="1"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="40" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="20" y="308" width="280" height="240"/>
+                            </mapView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="twitter" lineBreakMode="tailTruncation" minimumFontSize="10" id="41" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="52" y="234" width="259" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="TopLeft" text="Title" lineBreakMode="tailTruncation" minimumFontSize="10" id="42" translatesAutoresizingMaskIntoConstraints="NO" numberOfLines="2">
+                                <rect key="frame" x="20" y="103" width="280" height="54"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="18"/>
+                                <color key="textColor" colorSpace="calibratedRGB" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1"/>
+                                <nil key="highlightedColor"/>
+                                <constraints>
+                                    <constraint id="561" firstAttribute="width" constant="280"/>
+                                    <constraint id="562" firstAttribute="height" constant="54"/>
+                                </constraints>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="154" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="ios7-email-outline.png">
+                                <rect key="frame" x="20" y="158" width="24" height="24"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="155" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="ios7-telephone-outline.png">
+                                <rect key="frame" x="20" y="198" width="24" height="24"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="156" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="icon-social-twitter-outline-512.png">
+                                <rect key="frame" x="20" y="237" width="24" height="24"/>
+                            </imageView>
                         </subviews>
+                        <constraints>
+                            <constraint id="563" firstItem="42" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="103"/>
+                            <constraint id="564" firstItem="kh9-bI-dsS" firstAttribute="trailing" secondItem="42" secondAttribute="trailing" constant="20"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="tbxSearch" destination="5" id="name-outlet-5"/>
-                        <outlet property="lblName" destination="19" id="name-outlet-19"/>
-                        <outlet property="lblEmail" destination="20" id="name-outlet-20"/>
-                        <outlet property="lblPhone" destination="21" id="name-outlet-21"/>
+                        <outlet property="mapLocation" destination="40" id="name-outlet-40"/>
+                        <outlet property="tbxTwitter" destination="41" id="name-outlet-41"/>
+                        <outlet property="tbxTitle" destination="42" id="name-outlet-42"/>
+                        <outlet property="tbxEmail" destination="20" id="name-outlet-20"/>
+                        <outlet property="tbxPhone" destination="21" id="name-outlet-21"/>
+                        <outlet property="tbxName" destination="19" id="name-outlet-19"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="729" y="29"/>
+        </scene>
+        <scene sceneID="183">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="184" sceneMemberID="viewController" customClass="EmployeeDirectoryNavigationController" title="Xamarin Directory">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="187">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="186" kind="relationship" relationship="rootViewController" id="185"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="188" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-78" y="40"/>
+        </scene>
+        <scene sceneID="189">
+            <objects>
+                <viewController id="186" sceneMemberID="viewController" customClass="EmployeeDirectoryListViewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="181"/>
+                        <viewControllerLayoutGuide type="bottom" id="182"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="191">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" customColorSpace="calibratedWhite" colorSpace="calibratedRGB" red="0.12156862745098039" green="0.403921568627451" blue="0.65490196078431373" alpha="1"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="157" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="XamarinLogo.png">
+                                <rect key="frame" x="16" y="71" width="48" height="48"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="" borderStyle="roundedRect" minimumFontSize="17" id="32" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Search Here" clearButtonMode="whileEditing">
+                                <rect key="frame" x="75" y="80" width="228" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                            </textField>
+                        </subviews>
+                    </view>
+                    <navigationItem key="navigationItem" title="Xamarin Directory" id="190"/>
+                    <connections>
+                        <outlet property="tbxSearch" destination="32" id="name-outlet-32"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="192" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="306" y="44"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -70,5 +142,12 @@
     <resources>
         <image name="Default-568h.png" width="640" height="1136"/>
         <image name="Icon-60.png" width="120" height="120"/>
+        <image name="twitter.png" width="16" height="16"/>
+        <image name="email.png" width="16" height="16"/>
+        <image name="phoneiconlargeblue.png" width="21" height="21"/>
+        <image name="ios7-email-outline.png" width="512" height="512"/>
+        <image name="ios7-telephone-outline.png" width="512" height="512"/>
+        <image name="icon-social-twitter-outline-512.png" width="48" height="48"/>
+        <image name="XamarinLogo.png" width="100" height="92"/>
     </resources>
 </document>

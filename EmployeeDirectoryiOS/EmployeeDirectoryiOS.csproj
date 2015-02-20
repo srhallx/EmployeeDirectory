@@ -101,32 +101,54 @@
     <Reference Include="Worklight.iOS">
       <HintPath>..\Components\ibm-worklight-1.0.0\lib\ios\Worklight.iOS.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
     <BundleResource Include="worklight.plist" />
     <BundleResource Include="Resources\Icon-60%402x.png" />
+    <BundleResource Include="Resources\twitter.png" />
+    <BundleResource Include="Resources\twitter%402x.png" />
+    <BundleResource Include="Resources\email.png" />
+    <BundleResource Include="Resources\email%402x.png" />
+    <BundleResource Include="Resources\phoneiconlargeblue.png" />
+    <BundleResource Include="Resources\ios7-email-outline.png" />
+    <BundleResource Include="Resources\ios7-telephone-outline.png" />
+    <BundleResource Include="Resources\icon-social-twitter-outline-512.png" />
+    <BundleResource Include="Resources\XamarinLogo.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="EmployeeDirectoryiOSViewController.cs" />
-    <Compile Include="EmployeeDirectoryiOSViewController.designer.cs">
-      <DependentUpon>EmployeeDirectoryiOSViewController.cs</DependentUpon>
+    <Compile Include="EmployeeDirectoryRootViewController.cs" />
+    <Compile Include="EmployeeDirectoryRootViewController.designer.cs">
+      <DependentUpon>EmployeeDirectoryRootViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeDirectoryDetailViewController.cs" />
+    <Compile Include="EmployeeDirectoryDetailViewController.designer.cs">
+      <DependentUpon>EmployeeDirectoryDetailViewController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
+    <InterfaceDefinition Include="MyStoryboard.storyboard" />
   </ItemGroup>
   <Import Project="..\EmployeeDirectory\EmployeeDirectory.projitems" Label="Shared" Condition="Exists('..\EmployeeDirectory\EmployeeDirectory.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
   <ItemGroup>
     <XamarinComponentReference Include="ibm-worklight">
       <Version>1.0.0</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="json.net">
+      <Version>6.0.8.1</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
   </ItemGroup>

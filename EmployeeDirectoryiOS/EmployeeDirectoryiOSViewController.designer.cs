@@ -16,37 +16,53 @@ namespace EmployeeDirectoryiOS
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UILabel lblEmail { get; set; }
+		MonoTouch.MapKit.MKMapView mapLocation { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UILabel lblName { get; set; }
+		UILabel tbxEmail { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UILabel lblPhone { get; set; }
+		UILabel tbxName { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UITextField tbxSearch { get; set; }
+		UILabel tbxPhone { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UILabel tbxTitle { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UILabel tbxTwitter { get; set; }
 
 		void ReleaseDesignerOutlets ()
 		{
-			if (lblEmail != null) {
-				lblEmail.Dispose ();
-				lblEmail = null;
+			if (mapLocation != null) {
+				mapLocation.Dispose ();
+				mapLocation = null;
 			}
-			if (lblName != null) {
-				lblName.Dispose ();
-				lblName = null;
+			if (tbxEmail != null) {
+				tbxEmail.Dispose ();
+				tbxEmail = null;
 			}
-			if (lblPhone != null) {
-				lblPhone.Dispose ();
-				lblPhone = null;
+			if (tbxName != null) {
+				tbxName.Dispose ();
+				tbxName = null;
 			}
-			if (tbxSearch != null) {
-				tbxSearch.Dispose ();
-				tbxSearch = null;
+			if (tbxPhone != null) {
+				tbxPhone.Dispose ();
+				tbxPhone = null;
+			}
+			if (tbxTitle != null) {
+				tbxTitle.Dispose ();
+				tbxTitle = null;
+			}
+			if (tbxTwitter != null) {
+				tbxTwitter.Dispose ();
+				tbxTwitter = null;
 			}
 		}
 	}
