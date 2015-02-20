@@ -29,25 +29,25 @@ namespace EmployeeDirectoryiOS
 				tbxSearch.ResignFirstResponder ();
 				return true;
 			};
-
+				
 			tbxSearch.Ended += async delegate(object sender, EventArgs e) {
 				Employee[] empRecord;
 
-				if (tbxSearch.Text.Length > 0) 
+				if (tbxSearch.Text.Length > 0)
 					empRecord = await employeeDirectory.FindEmployee (tbxSearch.Text);
 				else
-					empRecord = await employeeDirectory.AllEmployees();
+					empRecord = await employeeDirectory.AllEmployees ();
 
-				tblEmployees.DataSource = new TableSource(empRecord);
-				tblEmployees.ReloadData();
+				tblEmployees.DataSource = new TableSource (empRecord);
+				tblEmployees.ReloadData ();
 			};
 		}
-			
-		private async Task<bool> RetrieveAllEmployees()
+
+		private async Task<bool> RetrieveAllEmployees ()
 		{
-			Employee[] employeeRecord = await employeeDirectory.AllEmployees();
-			tblEmployees.DataSource = new TableSource(employeeRecord);
-			tblEmployees.ReloadData();
+			Employee[] employeeRecord = await employeeDirectory.AllEmployees ();
+			tblEmployees.DataSource = new TableSource (employeeRecord);
+			tblEmployees.ReloadData ();
 			return true;
 		}
 
@@ -58,7 +58,7 @@ namespace EmployeeDirectoryiOS
 				if (navctlr != null) {
 					var source = tblEmployees.DataSource as TableSource;
 					var rowPath = tblEmployees.IndexPathForSelectedRow;
-					var item = source.GetItem(rowPath.Row);
+					var item = source.GetItem (rowPath.Row);
 					navctlr.SetEmployee (this, item); // to be defined on the TaskDetailViewController
 				}
 			}
@@ -66,9 +66,11 @@ namespace EmployeeDirectoryiOS
 			
 	}
 
-	public class TableSource : UITableViewDataSource {
+	public class TableSource : UITableViewDataSource
+	{
 		Employee[] employeeRecords;
 		string cellIdentifier = "TableCell";
+
 		public TableSource (Employee[] items)
 		{
 			employeeRecords = items;
@@ -78,18 +80,18 @@ namespace EmployeeDirectoryiOS
 		{
 			return employeeRecords.Length;
 		}
-			
+
 		public override UITableViewCell GetCell (UITableView tableView, NSIndexPath indexPath)
 		{
 			UITableViewCell cell = tableView.DequeueReusableCell (cellIdentifier);
 
-			cell.TextLabel.Text = employeeRecords[indexPath.Row].FullName;
+			cell.TextLabel.Text = employeeRecords [indexPath.Row].FullName;
 			cell.DetailTextLabel.Text = employeeRecords [indexPath.Row].Title;
 
 			return cell;
 		}
 
-		public Employee GetItem(int id) 
+		public Employee GetItem (int id)
 		{
 			return employeeRecords [id];
 		}
