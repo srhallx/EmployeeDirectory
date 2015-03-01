@@ -61,7 +61,7 @@
                                                     <rect key="frame" x="15" y="25.5" width="43" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" colorSpace="calibratedRGB" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -71,6 +71,9 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="gray" id="1142" key="tableFooterView" hidden="YES" hidesWhenStopped="YES">
+                                    <rect key="frame" x="0.0" y="396" width="320" height="44"/>
+                                </activityIndicatorView>
                             </tableView>
                         </subviews>
                     </view>
@@ -78,6 +81,7 @@
                     <connections>
                         <outlet property="tblEmployees" destination="563" id="name-outlet-563"/>
                         <outlet property="tbxSearch" destination="32" id="name-outlet-32"/>
+                        <outlet property="activityIndicator" destination="1142" id="name-outlet-1142"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="13" userLabel="First Responder" sceneMemberID="firstResponder"/>

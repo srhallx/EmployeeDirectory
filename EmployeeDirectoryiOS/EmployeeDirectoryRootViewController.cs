@@ -23,7 +23,16 @@ namespace EmployeeDirectoryiOS
 
 			employeeDirectory = new EmployeeDirectoryClient (WorklightClient.CreateInstance ());
 
-			RetrieveAllEmployees ();
+			activityIndicator.StartAnimating ();
+			RetrieveAllEmployees ().ContinueWith(
+				t => {
+					activityIndicator.StopAnimating();
+
+					if (t.Result != null) {
+						tblEmployees.DataSource = new TableSource (t.Result);
+						tblEmployees.ReloadData ();
+					}
+				}, TaskScheduler.FromCurrentSynchronizationContext());
 
 			tbxSearch.ShouldReturn += (textField) => {
 				tbxSearch.ResignFirstResponder ();
@@ -43,12 +52,10 @@ namespace EmployeeDirectoryiOS
 			};
 		}
 
-		private async Task<bool> RetrieveAllEmployees ()
+		private async Task<Employee[]> RetrieveAllEmployees ()
 		{
 			Employee[] employeeRecord = await employeeDirectory.AllEmployees ();
-			tblEmployees.DataSource = new TableSource (employeeRecord);
-			tblEmployees.ReloadData ();
-			return true;
+			return employeeRecord;
 		}
 
 		public override void PrepareForSegue (UIStoryboardSegue segue, NSObject sender)

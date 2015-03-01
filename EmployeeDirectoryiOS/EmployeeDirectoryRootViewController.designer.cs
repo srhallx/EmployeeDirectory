@@ -16,6 +16,10 @@ namespace EmployeeDirectoryiOS
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		UIActivityIndicatorView activityIndicator { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		UITableView tblEmployees { get; set; }
 
 		[Outlet]
@@ -24,6 +28,10 @@ namespace EmployeeDirectoryiOS
 
 		void ReleaseDesignerOutlets ()
 		{
+			if (activityIndicator != null) {
+				activityIndicator.Dispose ();
+				activityIndicator = null;
+			}
 			if (tblEmployees != null) {
 				tblEmployees.Dispose ();
 				tblEmployees = null;

@@ -137,7 +137,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <InterfaceDefinition Include="MainStoryboard.storyboard" />
     <InterfaceDefinition Include="MyStoryboard.storyboard" />
   </ItemGroup>
   <Import Project="..\EmployeeDirectory\EmployeeDirectory.projitems" Label="Shared" Condition="Exists('..\EmployeeDirectory\EmployeeDirectory.projitems')" />

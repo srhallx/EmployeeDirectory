@@ -10,30 +10,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/searchView1"
         android:queryHint="Search Text" />
-    <LinearLayout
-        android:orientation="vertical"
+    <ListView
+        android:minWidth="25px"
+        android:minHeight="25px"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/linearLayout1"
-        android:padding="25dp">
-        <TextView
-            android:text="lblName"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/lblName" />
-        <TextView
-            android:text="lblPhone"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/lblPhone"
-            android:paddingTop="15dp" />
-        <TextView
-            android:text="lblEmail"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/lblEmail" />
-    </LinearLayout>
+        android:layout_height="match_parent"
+        android:id="@+id/employeeList" />
 </LinearLayout>
