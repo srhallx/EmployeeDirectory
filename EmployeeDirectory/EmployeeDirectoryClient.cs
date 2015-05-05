@@ -4,11 +4,14 @@ using System.Text;
 using System.Json;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
+using EmployeeDirectory;
 
 namespace EmployeeDirectory
 {
 	public class EmployeeDirectoryClient
 	{
+		private static string MFPAdapter = "EmployeeAdapter";
+		private static string MFPGeoAdapter = "GeoLocation";
 
 		//Our MFP Client instance
 		public IWorklightClient WorklightClientInstance { get; private set; }
@@ -31,14 +34,14 @@ namespace EmployeeDirectory
 				await ConnectMobileFirst();
 					
 				invocationData = new WorklightProcedureInvocationData (
-						"mysqladapter", "findEmployee", new object[] { empName });
+					MFPAdapter, "findEmployee", new object[] { empName });
 				task = await WorklightClientInstance.InvokeProcedure (invocationData);
 
 				if (task.Success) {
 
-					Employee[] emp = ParseResultSet((JsonObject)task.ResponseJSON);
+					Employee emp = ParseSingleEmployeeResult((JsonObject)task.ResponseJSON);
 
-					return emp;
+					return new Employee[] {emp};
 
 				} else {
 					throw new Exception ("Adapter procedure failed.");
@@ -60,12 +63,12 @@ namespace EmployeeDirectory
 				await ConnectMobileFirst();
 					
 				invocationData = new WorklightProcedureInvocationData (
-					"mysqladapter", "allEmployees", new object[] {});
+					MFPAdapter, "allEmployees", new object[] {});
 				task = await WorklightClientInstance.InvokeProcedure (invocationData);
 
 				if (task.Success) {
 
-					Employee[] emp = ParseResultSet((JsonObject)task.ResponseJSON);
+					Employee[] emp = ParseEmployeeResultSet((JsonObject)task.ResponseJSON);
 
 					return emp;
 
@@ -79,14 +82,55 @@ namespace EmployeeDirectory
 			return null;
 		}
 
+		public async Task<GeoLocation> GetGeolocation(string city)
+		{
+			WorklightProcedureInvocationData invocationData;
+			WorklightResponse task;
 
-		protected Employee[] ParseResultSet(JsonObject obj)
+			try {
+
+				await ConnectMobileFirst();
+
+				invocationData = new WorklightProcedureInvocationData (
+					MFPGeoAdapter, "getLocation", new object[] {city});
+				task = await WorklightClientInstance.InvokeProcedure (invocationData);
+
+				if (task.Success) {
+
+					GeoLocation loc = ParseLocationResult((JsonObject)task.ResponseJSON);
+
+					return loc;
+
+				} else {
+					throw new Exception ("Adapter procedure failed.");
+				}
+			} catch (Exception ex) {
+				Console.WriteLine (ex.Message);
+			}
+
+			return null;
+		}
+
+
+		protected Employee[] ParseEmployeeResultSet(JsonObject obj)
 		{
 
 			Employee[] emp = new Employee[obj["resultSet"].Count];
 			emp = JsonConvert.DeserializeObject<Employee[]> (obj ["resultSet"].ToString ());
 
 			return emp;
+		}
+
+		protected Employee ParseSingleEmployeeResult(JsonObject obj)
+		{
+			Employee emp = JsonConvert.DeserializeObject<Employee> (obj.ToString ());
+			return emp;
+		}
+
+		protected GeoLocation ParseLocationResult(JsonObject obj)
+		{
+			GeoLocation loc = JsonConvert.DeserializeObject<GeoLocation> (obj.ToString ());
+			return loc;
 		}
 
 		protected async Task ConnectMobileFirst()

@@ -11,5 +11,20 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Employee.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EmployeeDirectoryClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoLocation.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)MFPProject\" />
+    <Folder Include="$(MSBuildThisFileDirectory)MFPProject\EmployeeDirectory\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)MFPProject\EmployeeDirectory\adapters\EmployeeAdapter\EmployeeAdapter-impl.js" />
+    <None Include="$(MSBuildThisFileDirectory)MFPProject\EmployeeDirectory\adapters\EmployeeAdapter\EmployeeAdapter.xml" />
+    <None Include="$(MSBuildThisFileDirectory)MFPProject\EmployeeDirectory\adapters\EmployeeAdapter\filtered.xsl" />
+    <None Include="$(MSBuildThisFileDirectory)MFPProject\EmployeeDirectory\adapters\GeoLocation\GeoLocation-impl.js" />
+    <None Include="$(MSBuildThisFileDirectory)MFPProject\EmployeeDirectory\adapters\GeoLocation\GeoLocation.xml" />
+    <None Include="$(MSBuildThisFileDirectory)MFPProject\EmployeeDirectory\adapters\GeoLocation\filtered.xsl" />
+    <None Include="$(MSBuildThisFileDirectory)MFPProject\EmployeeDirectory\adapters\mysqladapter\mysqladapter-impl.js" />
+    <None Include="$(MSBuildThisFileDirectory)MFPProject\EmployeeDirectory\adapters\mysqladapter\mysqladapter.xml" />
   </ItemGroup>
 </Project>

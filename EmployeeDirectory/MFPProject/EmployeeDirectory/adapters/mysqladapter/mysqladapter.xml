@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+    Licensed Materials - Property of IBM
+    5725-I43 (C) Copyright IBM Corp. 2011, 2013. All Rights Reserved.
+    US Government Users Restricted Rights - Use, duplication or
+    disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<ns2:adapter xmlns:ns2="http://www.ibm.com/mfp/integration" name="mysqladapter" platformVersion="6.3.0.00.20141127-1357">
+    <displayName>mysqladapter</displayName>
+    <description>mysqladapter</description>
+    <connectivity>
+        <connectionPolicy xmlns:ns4="http://www.ibm.com/mfp/integration/sql" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns4:SQLConnectionPolicy">
+            <dataSourceDefinition>
+                <driverClass>com.mysql.jdbc.Driver</driverClass>
+                <url>jdbc:mysql://localhost:3306/employees</url>
+                <user>mobilefirst</user>
+                <password>password</password>
+            </dataSourceDefinition>
+        </connectionPolicy>
+    </connectivity>
+    <procedure name="findEmployee"/>
+    <procedure name="allEmployees"/>
+</ns2:adapter>
+
+<!-- Built by Worklight on machine 172.19.131.76 on 2015-02-19 at 19:13:03 -->
