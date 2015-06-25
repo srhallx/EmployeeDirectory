@@ -101,8 +101,14 @@
     <Reference Include="Worklight.iOS">
       <HintPath>..\Components\ibm-worklight-1.0.0\lib\ios\Worklight.iOS.dll</HintPath>
     </Reference>
+    <Reference Include="PLCrashReporter">
+      <HintPath>..\Components\xamarin-insights-1.9.1\lib\ios\PLCrashReporter.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Insights">
+      <HintPath>..\Components\xamarin-insights-1.9.1\lib\ios\Xamarin.Insights.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -148,6 +154,10 @@
     </XamarinComponentReference>
     <XamarinComponentReference Include="json.net">
       <Version>6.0.8.1</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="xamarin-insights">
+      <Version>1.9.1</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
   </ItemGroup>

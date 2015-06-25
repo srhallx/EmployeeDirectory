@@ -24,7 +24,7 @@ namespace EmployeeDirectoryiOS
 			employeeDirectory = new EmployeeDirectoryClient (WorklightClient.CreateInstance ());
 
 			activityIndicator.StartAnimating ();
-			RetrieveAllEmployees ().ContinueWith(
+			employeeDirectory.AllEmployees().ContinueWith(
 				t => {
 					activityIndicator.StopAnimating();
 
@@ -51,12 +51,7 @@ namespace EmployeeDirectoryiOS
 				tblEmployees.ReloadData ();
 			};
 		}
-
-		private async Task<Employee[]> RetrieveAllEmployees ()
-		{
-			Employee[] employeeRecord = await employeeDirectory.AllEmployees ();
-			return employeeRecord;
-		}
+			
 
 		public override void PrepareForSegue (UIStoryboardSegue segue, NSObject sender)
 		{
@@ -70,7 +65,6 @@ namespace EmployeeDirectoryiOS
 				}
 			}
 		}
-			
 	}
 
 	public class TableSource : UITableViewDataSource
@@ -92,6 +86,7 @@ namespace EmployeeDirectoryiOS
 		{
 			UITableViewCell cell = tableView.DequeueReusableCell (cellIdentifier);
 
+			//Set cell contents
 			cell.TextLabel.Text = employeeRecords [indexPath.Row].FullName;
 			cell.DetailTextLabel.Text = employeeRecords [indexPath.Row].Title;
 

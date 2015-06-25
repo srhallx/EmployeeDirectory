@@ -29,6 +29,7 @@ namespace EmployeeDirectoryiOS
 		{
 			base.ViewDidLoad ();
 
+			//Assign data to UI controls
 			lblName.Text = employeeData.FullName;
 			lblTitle.Text = employeeData.Title;
 			lblPhone.Text = employeeData.Phone;
@@ -39,11 +40,13 @@ namespace EmployeeDirectoryiOS
 			employeeDirectory = new EmployeeDirectoryClient (WorklightClient.CreateInstance ());
 
 			if (employeeData.City != null && employeeData.City.Length > 0) {
+
 				RetrieveLocation (employeeData.City).ContinueWith (
 					t => {
 
 						if (t.Result != null) {
 
+							//Show city on map
 							CLLocationCoordinate2D zoomLocation = new CLLocationCoordinate2D ();
 							zoomLocation.Latitude = t.Result.Lattitude;
 							zoomLocation.Longitude = t.Result.Longitude;
