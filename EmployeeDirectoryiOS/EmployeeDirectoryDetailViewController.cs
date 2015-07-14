@@ -36,6 +36,12 @@ namespace EmployeeDirectoryiOS
 			lblTwitter.Text = employeeData.Twitter;
 			lblEmail.Text = employeeData.Email;
 
+			if (employeeData.Twitter == null || employeeData.Twitter.Length == 0)
+				imgTwitter.Hidden = true;
+			else
+				imgTwitter.Hidden = false;
+			
+
 			//Get geodata
 			employeeDirectory = new EmployeeDirectoryClient (WorklightClient.CreateInstance ());
 

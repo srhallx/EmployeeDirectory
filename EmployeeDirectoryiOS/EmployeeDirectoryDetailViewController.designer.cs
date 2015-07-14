@@ -16,6 +16,10 @@ namespace EmployeeDirectoryiOS
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		UIImageView imgTwitter { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		UILabel lblEmail { get; set; }
 
 		[Outlet]
@@ -40,6 +44,10 @@ namespace EmployeeDirectoryiOS
 
 		void ReleaseDesignerOutlets ()
 		{
+			if (imgTwitter != null) {
+				imgTwitter.Dispose ();
+				imgTwitter = null;
+			}
 			if (lblEmail != null) {
 				lblEmail.Dispose ();
 				lblEmail = null;

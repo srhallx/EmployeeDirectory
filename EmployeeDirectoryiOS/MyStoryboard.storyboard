@@ -164,6 +164,7 @@
                         <outlet property="lblPhone" destination="21" id="name-outlet-21"/>
                         <outlet property="lblEmail" destination="20" id="name-outlet-20"/>
                         <outlet property="mapLocation" destination="40" id="name-outlet-40"/>
+                        <outlet property="imgTwitter" destination="156" id="name-outlet-156"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="165" userLabel="First Responder" sceneMemberID="firstResponder"/>

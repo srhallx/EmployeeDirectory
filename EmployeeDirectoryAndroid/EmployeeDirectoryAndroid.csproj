@@ -73,6 +73,7 @@
     <AndroidResource Include="Resources\drawable-xhdpi\Icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\Icon.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\Icon.png" />
+    <AndroidResource Include="Resources\layout\DetailView.axml" />
   </ItemGroup>
   <Import Project="..\EmployeeDirectory\EmployeeDirectory.projitems" Label="Shared" Condition="Exists('..\EmployeeDirectory\EmployeeDirectory.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
