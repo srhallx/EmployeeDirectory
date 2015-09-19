@@ -19,8 +19,7 @@ Now replace both the EmployeeAdapter-impl.js and the EmployeeAdapter.xml files (
 From project root directory:
 
 - mfp start
-- mfp build
-- mfp deploy
+- mfp push
 
 Test service:
 
