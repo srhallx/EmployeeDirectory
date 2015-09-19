@@ -5,26 +5,26 @@ Sample Xamarin app connecting to IBM MobileFirst Platform.
 
 This demo shows a very simplistic Xamarin iOS application connecting to an IBM MobileFirst adapter.  
 
-Creating the MobileFirst service (Requires Worklight CLI Tools from IBM)
+Creating the MobileFirst service (Requires MobileFirst Platform CLI Tools from IBM)
 
 From the command line:
 
-- wl create EmployeeDirectory
+- mfp create EmployeeDirectory
 - cd EmployeeDirectory
-- wl add api EmployeeDirectoryiOS -e ios
-- wl add adapter EmployeeAdapter --type http
+- mfp add api EmployeeDirectoryiOS -e ios
+- mfp add adapter EmployeeAdapter --type http
 
 Now replace both the EmployeeAdapter-impl.js and the EmployeeAdapter.xml files (these will be in the adapters subdirectory) with the same two files in MobileFirstFiles directory inside this repository.
 
 From project root directory:
 
-- wl start
-- wl build
-- wl deploy
+- mfp start
+- mfp build
+- mfp deploy
 
 Test service:
 
-- wl invoke
+- mfp invoke
 
 Type "Wen%20Li" when prompted.  Address results should appear.
 
